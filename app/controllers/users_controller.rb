@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   # GET /users or /users.json
   def index
-    @users = User.all
+    @users = @q.result
   end
 
   # GET /users/1 or /users/1.json
@@ -66,7 +66,7 @@ class UsersController < ApplicationController
     def set_q
       @q = User.ransack(params[:q])
     end
-    
+
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
