@@ -36,9 +36,7 @@
 
 <h1>ユーザー検索</h1>
 <%= search_form_for @q, url: search_users_path do |f| %>
-  <%= f.label :name_cont, 'ユーザー名' %>
-  <%= f.search_field :name_cont %>
-  <%= f.label :age_eq, '年齢' %>
-  <%= f.search_field :age_eq %>
+  <%= f.label :age_or_height_or_weight_gt, "数値を入力してください" %>
+  <%= f.search_field :age_or_height_or_weight_gt %>
   <%= f.submit '検索' %>
 <% end %>
