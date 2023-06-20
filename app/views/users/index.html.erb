@@ -36,7 +36,14 @@
 
 <h1>ユーザー検索</h1>
 <%= search_form_for @q, url: search_users_path do |f| %>
-  <%= f.label :age_or_height_or_weight_gt, "数値を入力してください" %>
-  <%= f.search_field :age_or_height_or_weight_gt %>
+  <%= f.label :name_cont, 'ユーザー名' %>
+  <%= f.search_field :name_cont %>
+  <%= f.label :age, '年齢' %>
+  <%= f.radio_button :age_lteq, '' %>指定しない
+  <%= f.radio_button :age_lteq, '10' %>10歳以下
+  <%= f.radio_button :age_lteq, '20' %>20歳以下
+  <%= f.radio_button :age_lteq, '30' %>30歳以下
+  <%= f.radio_button :age_lteq, '40' %>40歳以下
+  <%= f.radio_button :age_gteq, '50' %>50歳以上
   <%= f.submit '検索' %>
 <% end %>
